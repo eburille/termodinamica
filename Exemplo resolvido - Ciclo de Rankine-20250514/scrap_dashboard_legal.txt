@@ -1,0 +1,17 @@
+x = .1
+fig = px.bar(dados_rend, x='Time', y='Rendimento', range_y=[0.24,0.25], color=None)
+fig.show()
+
+from dash import Dash, dcc, html
+import plotly.express as px 
+app = Dash(__name__)
+fig = px.scatter(dados_rend,x = Time, y = Rendimento, range_y=[0.24,0.25], color = None)
+app.layout = html.Div(style={fontSize 28px, color blue},children=[html.H1(children='Dashboard do Ciclo Térmico'),
+html.Div(children='''
+Gráfico de eficiência térmica
+'''),
+
+dcc.Graph(id='Trend do rendimento', figure=fig)])
+
+if __name__ == '__main__'
+    app.run_server(debug=False)

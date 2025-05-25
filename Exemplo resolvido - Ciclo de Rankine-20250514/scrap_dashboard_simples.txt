@@ -1,0 +1,11 @@
+ Create traces
+fig = go.Figure()
+# Plotando
+fig.update_layout(title='Eficiência do ciclo',xaxis_range=[0,99], yaxis_range=[0.24,0.25])
+# Ponto de operação atual
+fig.add_trace(go.Scatter(x=dados_rend['Time'],y=dados_rend['Rendimento'],customdata=dados['P3'],
+                         mode='markers',marker=dict(size=12,color='rgba(255, 0, 0, 0.5)',line=dict(width=2,
+                         color='rgba(255, 0, 0, 0.5)'),symbol='diamond'),
+                         hoverinfo = 'text',
+                         hovertemplate = 'Rendimento: %{y:.3f}, ' + 'P6 = ' + ' %{customdata:.3f} bar',
+                         name='Rendimento'))
